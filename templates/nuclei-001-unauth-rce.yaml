@@ -7,7 +7,7 @@ info:
 requests:
   - method: GET
     path:
-      - "/vulnerable_test_page.html"
+      - "/vulnerable_test_page"
     matchers:
       - type: word
         words:
