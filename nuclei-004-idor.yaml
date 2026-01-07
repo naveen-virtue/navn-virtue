@@ -1,0 +1,16 @@
+id: demo/idor
+info:
+  name: "Simulated IDOR"
+  author: "simulator"
+  severity: "high"
+  description: "Matches the simulated 'Insecure Direct Object Reference (IDOR)' string in the demo page."
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/vulnerable_test_page.html"
+    matchers:
+      - type: word
+        words:
+          - "Insecure Direct Object Reference (IDOR)"
+          - "/user/"
+        part: body

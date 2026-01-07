@@ -1,0 +1,16 @@
+id: demo/sql-injection
+info:
+  name: "Simulated SQL Injection"
+  author: "simulator"
+  severity: "high"
+  description: "Matches the simulated 'SQL Injection' string in the demo page."
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/vulnerable_test_page.html"
+    matchers:
+      - type: word
+        words:
+          - "SQL Injection"
+          - "/search?q="
+        part: body

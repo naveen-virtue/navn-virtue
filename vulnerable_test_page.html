@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simulated Nuclei Findings — Safe Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:#f5f7fb; color:#0b1220; margin:0; padding:24px; }
+    header { display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+    h1 { margin:0; font-size:20px; }
+    .notice { background:#fff9e6; border-left:4px solid #ffb020; padding:12px; margin-bottom:16px; }
+    .container { display:grid; grid-template-columns: 1fr 360px; gap:16px; align-items:start; }
+    .card { background:white; border-radius:8px; padding:12px; box-shadow:0 1px 3px rgba(9,12,20,0.06); }
+    .finding { border-left:6px solid #e0e6f0; padding:12px; margin-bottom:12px; border-radius:6px; }
+    .finding.critical { border-left-color:#a20000; background: linear-gradient(90deg, rgba(255,240,240,0.6), transparent); }
+    .finding.high { border-left-color:#b04f00; background: linear-gradient(90deg, rgba(255,250,240,0.6), transparent); }
+    .meta { font-size:13px; color:#475269; margin-top:6px; }
+    .actions { display:flex; gap:8px; margin-top:12px; }
+    button { background:#0b5fff; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+    button.secondary { background:#eef2ff; color:#0b3bff; border:1px solid #d8e0ff; }
+    pre { background:#0b122022; color:#0b1220; padding:12px; border-radius:6px; overflow:auto; max-height:360px; }
+    footer { margin-top:18px; font-size:13px; color:#62718a; }
+  </style>
+</head>
+<body>
+  <header>
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden><rect width="24" height="24" rx="6" fill="#fde8e8"/><path d="M6 12h12M12 6v12" stroke="#a20000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div>
+      <h1>Simulated Nuclei Findings — Safe Demo</h1>
+      <div style="color:#55617a; font-size:13px;">Non-exploitable sample output for UI/demo/training only</div>
+    </div>
+  </header>
+
+  <div class="notice card">
+    <strong>Safety notice:</strong> This page contains only simulated findings. Do not use this page for scanning or exploitation. Use in isolated test environments or for UI demos only.
+  </div>
+
+  <div class="container">
+    <div>
+      <div class="card">
+        <h2 style="margin-top:0; font-size:16px;">Findings (5)</h2>
+
+        <!-- Finding 1: Critical -->
+        <div class="finding critical">
+          <strong>Unauthenticated Remote Code Execution</strong>
+          <div class="meta">severity: <strong>critical</strong> · host: <code>https://example-target.local</code> · matched: <code>/api/exec</code></div>
+          <div style="margin-top:8px; color:#2d3748;">
+            Description: Simulated detection of an unauthenticated endpoint that could allow command execution. This entry is mock data for demonstration only.
+          </div>
+        </div>
+
+        <!-- Finding 2: Critical -->
+        <div class="finding critical">
+          <strong>Arbitrary File Upload (Critical)</strong>
+          <div class="meta">severity: <strong>critical</strong> · host: <code>https://example-target.local</code> · matched: <code>/upload</code></div>
+          <div style="margin-top:8px; color:#2d3748;">
+            Description: Simulated detection of an upload handler accepting unsafe file types. Mock output only; no file-handling code is present on this page.
+          </div>
+        </div>
+
+        <!-- Finding 3: High -->
+        <div class="finding high">
+          <strong>SQL Injection (High)</strong>
+          <div class="meta">severity: <strong>high</strong> · host: <code>https://example-target.local</code> · matched: <code>/search?q=</code></div>
+          <div style="margin-top:8px; color:#2d3748;">
+            Description: Simulated detection of SQL injection vectors in a query parameter. This is not an actual test; it is example output.
+          </div>
+        </div>
+
+        <!-- Finding 4: High -->
+        <div class="finding high">
+          <strong>Insecure Direct Object Reference (IDOR) (High)</strong>
+          <div class="meta">severity: <strong>high</strong> · host: <code>https://example-target.local</code> · matched: <code>/user/</code></div>
+          <div style="margin-top:8px; color:#2d3748;">
+            Description: Simulated detection of an endpoint that may allow access to unauthorized user resources. Example only.
+          </div>
+        </div>
+
+        <!-- Finding 5: High -->
+        <div class="finding high">
+          <strong>Outdated Dependency Disclosure (High)</strong>
+          <div class="meta">severity: <strong>high</strong> · host: <code>https://example-target.local</code> · matched: <code>/</code></div>
+          <div style="margin-top:8px; color:#2d3748;">
+            Description: Simulated detection of a publicly visible dependency fingerprint that may indicate an outdated library. Mock finding for demo.
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="downloadBtn">Download findings (JSON)</button>
+          <button id="copyBtn" class="secondary">Copy JSON to clipboard</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3 style="margin:0 0 8px 0;">Raw simulated Nuclei output</h3>
+        <pre id="rawOutput" aria-live="polite"></pre>
+      </div>
+    </div>
+
+    <aside class="card">
+      <h3 style="margin-top:0;">How to use</h3>
+      <ul style="color:#475269;">
+        <li>Open this file locally or serve from a static server (no backend required).</li>
+        <li>Click "Download findings" to save the sample JSON file for UI testing or parsers.</li>
+        <li>These findings are intentionally non-actionable and safe for demos only.</li>
+      </ul>
+
+      <h4 style="margin-top:12px;">Legal & safety</h4>
+      <div style="color:#6b788d; font-size:13px;">
+        Always run scans only against targets you own or have permission to test. For hands-on learning use purpose-built vulnerable apps.
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    Generated: simulated Nuclei findings — not a real scan.
+  </footer>
+
+<script>
+const findings = [
+  {
+    "info": {
+      "name": "Unauthenticated Remote Code Execution",
+      "author": "simulator",
+      "severity": "critical",
+      "description": "Simulated detection of an unauthenticated endpoint that could allow command execution."
+    },
+    "host": "https://example-target.local",
+    "matched": "/api/exec",
+    "matched_at": (new Date()).toISOString(),
+    "evidence": "Mock evidence snippet: endpoint returned suspicious header",
+    "reference": ["https://example.local/docs/fake-advisory"]
+  },
+  {
+    "info": {
+      "name": "Arbitrary File Upload",
+      "author": "simulator",
+      "severity": "critical",
+      "description": "Simulated detection of an upload handler accepting unsafe file types."
+    },
+    "host": "https://example-target.local",
+    "matched": "/upload",
+    "matched_at": (new Date()).toISOString(),
+    "evidence": "Mock evidence snippet: content-type allowed application/octet-stream",
+    "reference": ["https://example.local/docs/fake-upload"]
+  },
+  {
+    "info": {
+      "name": "SQL Injection",
+      "author": "simulator",
+      "severity": "high",
+      "description": "Simulated detection of SQL injection vectors in a query parameter."
+    },
+    "host": "https://example-target.local",
+    "matched": "/search?q=",
+    "matched_at": (new Date()).toISOString(),
+    "evidence": "Mock evidence snippet: response includes SQL error token",
+    "reference": ["https://example.local/docs/fake-sqli"]
+  },
+  {
+    "info": {
+      "name": "Insecure Direct Object Reference (IDOR)",
+      "author": "simulator",
+      "severity": "high",
+      "description": "Simulated detection of an endpoint that may allow access to unauthorized resources."
+    },
+    "host": "https://example-target.local",
+    "matched": "/user/",
+    "matched_at": (new Date()).toISOString(),
+    "evidence": "Mock evidence snippet: numeric id increments reveal other users' resources",
+    "reference": ["https://example.local/docs/fake-idor"]
+  },
+  {
+    "info": {
+      "name": "Outdated Dependency Disclosure",
+      "author": "simulator",
+      "severity": "high",
+      "description": "Simulated detection of a publicly visible dependency fingerprint indicating an outdated library."
+    },
+    "host": "https://example-target.local",
+    "matched": "/",
+    "matched_at": (new Date()).toISOString(),
+    "evidence": "Mock evidence snippet: server header contains old-lib/1.2.3",
+    "reference": ["https://example.local/docs/fake-dep"]
+  }
+];
+
+function renderRaw() {
+  const raw = JSON.stringify(findings, null, 2);
+  document.getElementById('rawOutput').textContent = raw;
+}
+
+function downloadJSON() {
+  const blob = new Blob([JSON.stringify(findings, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'simulated_nuclei_findings.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function copyToClipboard() {
+  navigator.clipboard.writeText(JSON.stringify(findings, null, 2)).then(() => {
+    alert('Simulated findings copied to clipboard.');
+  }).catch(() => {
+    alert('Copy failed — your browser may block clipboard access.');
+  });
+}
+
+document.getElementById('downloadBtn').addEventListener('click', downloadJSON);
+document.getElementById('copyBtn').addEventListener('click', copyToClipboard);
+
+renderRaw();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+id: demo/arbitrary-upload
+info:
+  name: "Simulated Arbitrary File Upload"
+  author: "simulator"
+  severity: "critical"
+  description: "Matches the simulated 'Arbitrary File Upload' string in the demo page."
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/vulnerable_test_page.html"
+    matchers:
+      - type: word
+        words:
+          - "Arbitrary File Upload"
+        part: body

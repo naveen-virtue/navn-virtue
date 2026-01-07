@@ -1,0 +1,15 @@
+id: demo/unauth-rce
+info:
+  name: "Simulated Unauthenticated RCE"
+  author: "simulator"
+  severity: "critical"
+  description: "Matches the simulated 'Unauthenticated Remote Code Execution' string in the demo page."
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/vulnerable_test_page.html"
+    matchers:
+      - type: word
+        words:
+          - "Unauthenticated Remote Code Execution"
+        part: body

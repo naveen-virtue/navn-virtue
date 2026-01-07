@@ -1,0 +1,16 @@
+id: demo/outdated-dep
+info:
+  name: "Simulated Outdated Dependency Disclosure"
+  author: "simulator"
+  severity: "high"
+  description: "Matches the simulated 'Outdated Dependency Disclosure' text in the demo page."
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/vulnerable_test_page.html"
+    matchers:
+      - type: word
+        words:
+          - "Outdated Dependency Disclosure"
+          - "old-lib/1.2.3"
+        part: body
