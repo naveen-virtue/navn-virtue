@@ -7,7 +7,7 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}/vulnerable_test_page.html"
+      - "/vulnerable_test_page.html"
     matchers:
       - type: word
         words:
