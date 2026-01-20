@@ -237,7 +237,7 @@
         "operationId": "AppController_getSecrets",
         "parameters": [],
         "responses": {
-          "200": {
+          "300": {
             "description": "",
             "content": {
               "application/json": {
