@@ -44,7 +44,7 @@
           }
         ],
         "responses": {
-          "400": {
+          "500": {
             "description": "Redirected"
           }
         },
