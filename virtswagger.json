@@ -682,7 +682,7 @@
               }
             }
           },
-          "402": {
+          "403": {
             "description": "invalid credentials",
             "content": {
               "application/json": {
