@@ -1679,7 +1679,7 @@
           }
         },
         "responses": {
-          "201": {
+          "203": {
             "description": "User created",
             "content": {
               "application/json": {
