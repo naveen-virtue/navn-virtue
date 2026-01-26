@@ -198,7 +198,7 @@
         "operationId": "AppController_getDebugUsers",
         "parameters": [],
         "responses": {
-          "200": {
+          "500": {
             "description": "Returns user statistics and information"
           }
         },
