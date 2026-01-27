@@ -558,7 +558,7 @@
               }
             }
           },
-          "500": {
+          "400": {
             "description": "invalid credentials",
             "content": {
               "application/json": {
