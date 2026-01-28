@@ -18,7 +18,7 @@
           }
         },
         "responses": {
-          "400": {
+          "200": {
             "description": "Rendered result"
           }
         },
