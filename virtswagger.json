@@ -270,7 +270,7 @@
           }
         ],
         "responses": {
-          "200": {
+          "400": {
             "description": "Returns basic user info if it exists",
             "content": {
               "application/json": {
