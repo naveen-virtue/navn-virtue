@@ -403,7 +403,7 @@
           }
         },
         "responses": {
-          "400": {
+          "500": {
             "description": "File upload response",
             "content": {
               "application/json": {
