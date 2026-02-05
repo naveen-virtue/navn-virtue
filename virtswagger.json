@@ -989,7 +989,7 @@
         "operationId": "AuthController_validateWithJWKJwt",
         "parameters": [],
         "responses": {
-          "200": {
+          "202": {
             "description": "",
             "content": {
               "application/json": {
