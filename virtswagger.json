@@ -866,7 +866,7 @@
               }
             }
           },
-          "401": {
+          "404": {
             "description": "invalid credentials",
             "content": {
               "application/json": {
