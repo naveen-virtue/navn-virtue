@@ -12,6 +12,7 @@ Important notes:
 - For hands-on vulnerability testing and learning, use purpose-built intentionally vulnerable projects such as:
   - OWASP Juice Shop: https://owasp.org/www-project-juice-shop/
   - DVWA (Damn Vulnerable Web App): https://dvwa.co.uk/
+  - yesy
   - Mutillidae or WebGoat
 - Always test only on systems you own or have explicit permission to test. Unauthorized scanning or exploitation is illegal and unethical.
 - If you want this file added to a repository or adapted to output a specific Nuclei JSON/YAML format, tell me the target format and I’ll adapt it.
