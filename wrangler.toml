@@ -1,0 +1,5 @@
+name = "navn-virtue"
+type = "javascript"
+
+[env.production]
+build = { command = "npm install" }
